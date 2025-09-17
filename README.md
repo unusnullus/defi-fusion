@@ -1,13 +1,12 @@
-# IPOR Fusion
+# Unus Nullus UAB Vault Infrastructure
 
-IPOR Fusion is a yield optimization framework for automated execution of smart asset management on-chain, saving users
-time and effort. It is an unopinionated and customizable infrastructure fund managers can use to deploy assets on-chain
-while implementing custom algorithms off-chain.
+This repository contains the Unus Nullus UAB vault infrastructure: an appropriate, modular ERC4626-based system for
+general-purpose vaults. It enables automated on-chain asset management via pluggable integrations ("fuses") while
+keeping the core minimal and protocol-agnostic.
 
 ## Technical Overview
 
-More technical information can be found
-here: [What is IPOR Fusion? A Technical Overview](https://blog.ipor.io/what-is-ipor-fusion-a-technical-overview-114ccd67dfcf)
+For architecture details and usage guides, refer to the docs in this repository.
 
 ## Installation
 

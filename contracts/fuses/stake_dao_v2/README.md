@@ -1,8 +1,10 @@
-# StakeDAO V2 Integration
+# StakeDAO V2 Integration (Unus Nullus UAB Vault Infrastructure)
 
 ## Overview
 
-StakeDAO V2 integration enables IPOR Fusion to interact with StakeDAO V2 reward vaults (ERC4626-compliant). This integration allows users to deposit assets and earn yields from various DeFi protocols through a unified interface, while also claiming rewards from multiple sources.
+This module is part of the Unus Nullus UAB vault infrastructure. It enables the vault to interact with StakeDAO V2
+reward vaults (ERC4626-compliant). Through a unified interface, users can deposit assets and earn yields from various
+DeFi protocols, while also claiming rewards from multiple sources.
 
 **What Stake DAO v2 does:**
 StakeDAO V2 provides yield farming opportunities by aggregating liquidity across multiple DeFi protocols. Users can deposit assets into reward vaults that automatically allocate funds to various strategies (like lending protocols, DEX liquidity pools, etc.) and earn both yield from the underlying protocols and additional rewards from StakeDAO's reward distribution system.
@@ -27,7 +29,7 @@ StakeDAO V2 Reward Vault (ERC4626)
 
 ### Key Components
 
--   **`StakeDaoV2BalanceFuse`**: Tracks total USD value across all configured reward vaults
+-   **`StakeDaoV2BalanceFuse`**: Tracks the total value across all configured reward vaults
 -   **`StakeDaoV2SupplyFuse`**: Handles deposits and withdrawals from reward vaults
 -   **`StakeDaoV2ClaimFuse`**: Manages reward claiming for both main rewards and extra rewards
 
