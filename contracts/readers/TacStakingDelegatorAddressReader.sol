@@ -2,8 +2,8 @@
 pragma solidity 0.8.26;
 
 import {UniversalReader, ReadResult} from "../universal_reader/UniversalReader.sol";
-import {TacStakingStorageLib} from "../fuses/tac/lib/TacStakingStorageLib.sol";
-import {TacValidatorAddressConverter} from "../fuses/tac/lib/TacValidatorAddressConverter.sol";
+import {TacStakingStorageLib} from "../gluons/tac/lib/TacStakingStorageLib.sol";
+import {TacValidatorAddressConverter} from "../gluons/tac/lib/TacValidatorAddressConverter.sol";
 
 /**
  * @title TacStakingDelegatorAddressReader

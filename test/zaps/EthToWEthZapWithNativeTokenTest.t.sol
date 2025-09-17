@@ -5,7 +5,7 @@ import {Test} from "forge-std/Test.sol";
 import {ERC4626ZapInWithNativeToken, ZapInData, Call} from "../../contracts/zaps/ERC4626ZapInWithNativeToken.sol";
 import {PlasmaVault} from "../../contracts/vaults/PlasmaVault.sol";
 import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
-import {IWETH9} from "../fuses/erc4626/IWETH9.sol";
+import {IWETH9} from "../gluons/erc4626/IWETH9.sol";
 
 contract EthToWEthZapWithNativeTokenTest is Test {
     uint256 internal constant FORK_BLOCK_NUMBER = 32275361;

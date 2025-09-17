@@ -4,7 +4,7 @@ pragma solidity 0.8.26;
 import {PlasmaVaultStorageLib} from "../libraries/PlasmaVaultStorageLib.sol";
 import {FusesLib} from "../libraries/FusesLib.sol";
 import {IporFusionMarkets} from "../libraries/IporFusionMarkets.sol";
-import {IFuseCommon} from "../fuses/IFuseCommon.sol";
+import {IFuseCommon} from "../gluons/IFuseCommon.sol";
 
 /**
  * @title ReadBalanceFuses

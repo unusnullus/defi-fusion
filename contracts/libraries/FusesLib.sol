@@ -2,7 +2,7 @@
 pragma solidity 0.8.26;
 
 import {Address} from "@openzeppelin/contracts/utils/Address.sol";
-import {IFuseCommon} from "../fuses/IFuseCommon.sol";
+import {IFuseCommon} from "../gluons/IFuseCommon.sol";
 import {FuseStorageLib} from "./FuseStorageLib.sol";
 import {PlasmaVaultStorageLib} from "./PlasmaVaultStorageLib.sol";
 /**

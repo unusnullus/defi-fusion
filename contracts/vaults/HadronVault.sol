@@ -10,7 +10,7 @@ import {IERC20Permit} from "@openzeppelin/contracts/token/ERC20/extensions/IERC2
 import {IERC721Receiver} from "@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol";
 import {Errors} from "../libraries/errors/Errors.sol";
 import {IPlasmaVault, FuseAction} from "../interfaces/IPlasmaVault.sol";
-import {IFuseCommon} from "../fuses/IFuseCommon.sol";
+import {IFuseCommon} from "../gluons/IFuseCommon.sol";
 import {IPlasmaVaultBase} from "../interfaces/IPlasmaVaultBase.sol";
 import {AccessManagedUpgradeable} from "../managers/access/AccessManagedUpgradeable.sol";
 import {CallbackHandlerLib} from "../libraries/CallbackHandlerLib.sol";
