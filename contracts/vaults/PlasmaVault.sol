@@ -15,7 +15,7 @@ import {IPlasmaVaultBase} from "../interfaces/IPlasmaVaultBase.sol";
 import {AccessManagedUpgradeable} from "../managers/access/AccessManagedUpgradeable.sol";
 import {CallbackHandlerLib} from "../libraries/CallbackHandlerLib.sol";
 import {FusesLib} from "../libraries/FusesLib.sol";
-import {PlasmaVaultLib} from "../libraries/PlasmaVaultLib.sol";
+import {HadronVaultLib as PlasmaVaultLib} from "../libraries/HadronVaultLib.sol";
 import {UniversalReader} from "../universal_reader/UniversalReader.sol";
 import {PreHooksHandler} from "../handlers/pre_hooks/PreHooksHandler.sol";
 

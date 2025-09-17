@@ -7,8 +7,8 @@ import {IPlasmaVaultBase} from "../interfaces/IPlasmaVaultBase.sol";
 import {Errors} from "../libraries/errors/Errors.sol";
 import {PlasmaVaultGovernance} from "./PlasmaVaultGovernance.sol";
 import {ERC20VotesUpgradeable} from "./ERC20VotesUpgradeable.sol";
-import {PlasmaVaultLib} from "../libraries/PlasmaVaultLib.sol";
-import {PlasmaVaultStorageLib} from "../libraries/PlasmaVaultStorageLib.sol";
+import {HadronVaultLib as PlasmaVaultLib} from "../libraries/HadronVaultLib.sol";
+import {HadronVaultStorageLib as PlasmaVaultStorageLib} from "../libraries/HadronVaultStorageLib.sol";
 import {ContextClient} from "../managers/context/ContextClient.sol";
 import {PreHooksHandler} from "../handlers/pre_hooks/PreHooksHandler.sol";
 /**

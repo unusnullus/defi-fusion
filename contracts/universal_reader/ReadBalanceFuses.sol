@@ -1,7 +1,8 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: BUSL-1.1
 pragma solidity 0.8.26;
 
-import {PlasmaVaultStorageLib} from "../libraries/PlasmaVaultStorageLib.sol";
+import {IAccessManaged} from "@openzeppelin/contracts/access/manager/IAccessManaged.sol";
+import {HadronVaultStorageLib as PlasmaVaultStorageLib} from "../libraries/HadronVaultStorageLib.sol";
 import {FusesLib} from "../libraries/FusesLib.sol";
 import {IporFusionMarkets} from "../libraries/IporFusionMarkets.sol";
 import {IFuseCommon} from "../gluons/IFuseCommon.sol";

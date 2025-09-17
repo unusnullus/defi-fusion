@@ -3,8 +3,8 @@ pragma solidity ^0.8.20;
 
 import {SafeCast} from "@openzeppelin/contracts/utils/math/SafeCast.sol";
 import {Math} from "@openzeppelin/contracts/utils/math/Math.sol";
-import {PlasmaVaultStorageLib} from "../../libraries/PlasmaVaultStorageLib.sol";
-import {PlasmaVaultLib} from "../../libraries/PlasmaVaultLib.sol";
+import {HadronVaultStorageLib as PlasmaVaultStorageLib} from "../../libraries/HadronVaultStorageLib.sol";
+import {HadronVaultLib as PlasmaVaultLib} from "../../libraries/HadronVaultLib.sol";
 import {FeeManager} from "../../managers/fee/FeeManager.sol";
 import {FeeAccount} from "../../managers/fee/FeeAccount.sol";
 

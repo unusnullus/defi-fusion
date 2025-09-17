@@ -2,8 +2,8 @@
 pragma solidity 0.8.26;
 
 import {FusesLib} from "../libraries/FusesLib.sol";
-import {PlasmaVaultConfigLib} from "../libraries/PlasmaVaultConfigLib.sol";
-import {PlasmaVaultLib, InstantWithdrawalFusesParamsStruct} from "../libraries/PlasmaVaultLib.sol";
+import {HadronVaultConfigLib as PlasmaVaultConfigLib} from "../libraries/HadronVaultConfigLib.sol";
+import {HadronVaultLib as PlasmaVaultLib, InstantWithdrawalFusesParamsStruct} from "../libraries/HadronVaultLib.sol";
 import {IPriceOracleMiddleware} from "../price_oracle/IPriceOracleMiddleware.sol";
 import {Errors} from "../libraries/errors/Errors.sol";
 import {PlasmaVaultStorageLib} from "../libraries/PlasmaVaultStorageLib.sol";

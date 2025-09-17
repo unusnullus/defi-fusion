@@ -4,7 +4,7 @@ pragma solidity 0.8.26;
 import {Address} from "@openzeppelin/contracts/utils/Address.sol";
 import {IFuseCommon} from "../gluons/IFuseCommon.sol";
 import {FuseStorageLib} from "./FuseStorageLib.sol";
-import {PlasmaVaultStorageLib} from "./PlasmaVaultStorageLib.sol";
+import {HadronVaultStorageLib as PlasmaVaultStorageLib} from "./HadronVaultStorageLib.sol";
 /**
  * @title Fuses Library - Core Component for Plasma Vault's Fuse Management System
  * @notice Library managing the lifecycle and configuration of fuses - specialized contracts that enable
