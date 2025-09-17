@@ -9,9 +9,9 @@ import {ERC4626Upgradeable} from "@openzeppelin/contracts-upgradeable/token/ERC2
 import {IERC20Permit} from "@openzeppelin/contracts/token/ERC20/extensions/IERC20Permit.sol";
 import {IERC721Receiver} from "@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol";
 import {Errors} from "../libraries/errors/Errors.sol";
-import {IPlasmaVault, FuseAction} from "../interfaces/IPlasmaVault.sol";
+import {IHadronVault as IPlasmaVault, FuseAction} from "../interfaces/IHadronVault.sol";
 import {IFuseCommon} from "../gluons/IFuseCommon.sol";
-import {IPlasmaVaultBase} from "../interfaces/IPlasmaVaultBase.sol";
+import {IHadronVaultBase as IPlasmaVaultBase} from "../interfaces/IHadronVaultBase.sol";
 import {AccessManagedUpgradeable} from "../managers/access/AccessManagedUpgradeable.sol";
 import {CallbackHandlerLib} from "../libraries/CallbackHandlerLib.sol";
 import {FusesLib} from "../libraries/FusesLib.sol";

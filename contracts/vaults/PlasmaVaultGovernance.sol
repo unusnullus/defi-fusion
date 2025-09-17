@@ -10,7 +10,7 @@ import {PlasmaVaultStorageLib} from "../libraries/PlasmaVaultStorageLib.sol";
 import {AssetDistributionProtectionLib, MarketLimit} from "../libraries/AssetDistributionProtectionLib.sol";
 import {AccessManagedUpgradeable} from "../managers/access/AccessManagedUpgradeable.sol";
 import {CallbackHandlerLib} from "../libraries/CallbackHandlerLib.sol";
-import {IPlasmaVaultGovernance} from "../interfaces/IPlasmaVaultGovernance.sol";
+import {IHadronVaultGovernance as IPlasmaVaultGovernance} from "../interfaces/IHadronVaultGovernance.sol";
 import {IIporFusionAccessManager} from "../interfaces/IIporFusionAccessManager.sol";
 import {PreHooksLib} from "../handlers/pre_hooks/PreHooksLib.sol";
 /// @title Plasma Vault Governance
