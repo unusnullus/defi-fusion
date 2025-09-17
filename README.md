@@ -1,6 +1,6 @@
-# Unus Nullus UAB Vault Infrastructure
+# Hadron Vault Infrastructure (Unus Nullus UAB)
 
-This repository contains the Unus Nullus UAB vault infrastructure: an appropriate, modular ERC4626-based system for
+This repository contains Hadron — the Unus Nullus UAB vault infrastructure: an appropriate, modular ERC4626-based system for
 general-purpose vaults. It enables automated on-chain asset management via pluggable integrations ("fuses") while
 keeping the core minimal and protocol-agnostic.
 

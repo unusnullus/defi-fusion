@@ -1,8 +1,8 @@
-# StakeDAO V2 Integration (Unus Nullus UAB Vault Infrastructure)
+# StakeDAO V2 Integration (Hadron Vault Infrastructure)
 
 ## Overview
 
-This module is part of the Unus Nullus UAB vault infrastructure. It enables the vault to interact with StakeDAO V2
+This module is part of the Hadron vault infrastructure by Unus Nullus UAB. It enables the vault to interact with StakeDAO V2
 reward vaults (ERC4626-compliant). Through a unified interface, users can deposit assets and earn yields from various
 DeFi protocols, while also claiming rewards from multiple sources.
 
