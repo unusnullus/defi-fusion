@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: BUSL-1.1
 pragma solidity 0.8.26;
 
-import {PlasmaVaultStorageLib} from "../libraries/PlasmaVaultStorageLib.sol";
+import {HadronVaultStorageLib as PlasmaVaultStorageLib} from "../libraries/HadronVaultStorageLib.sol";
 import {InstantWithdrawalFusesParamsStruct} from "../libraries/PlasmaVaultLib.sol";
 import {MarketLimit} from "../libraries/AssetDistributionProtectionLib.sol";
 

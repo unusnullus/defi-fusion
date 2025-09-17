@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: BUSL-1.1
 pragma solidity 0.8.26;
 
-import {PlasmaVaultStorageLib} from "./PlasmaVaultStorageLib.sol";
+import {HadronVaultStorageLib as PlasmaVaultStorageLib} from "./HadronVaultStorageLib.sol";
 import {Math} from "@openzeppelin/contracts/utils/math/Math.sol";
 
 /**

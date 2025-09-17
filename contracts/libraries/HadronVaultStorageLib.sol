@@ -2,9 +2,9 @@
 pragma solidity 0.8.26;
 
 /**
- * @title Plasma Vault Storage Library
- * @notice Library managing storage layout and access for the PlasmaVault system using ERC-7201 namespaced storage pattern
- * @dev This library is a core component of the PlasmaVault system that:
+ * @title Hadron Vault Storage Library
+ * @notice Library managing storage layout and access for the HadronVault system using ERC-7201 namespaced storage pattern
+ * @dev This library is a core component of the HadronVault system that:
  * 1. Defines and manages all storage structures using ERC-7201 namespaced storage pattern
  * 2. Provides storage access functions for PlasmaVault.sol, PlasmaVaultBase.sol and PlasmaVaultGovernance.sol
  * 3. Ensures storage safety for the upgradeable vault system
@@ -18,9 +18,9 @@ pragma solidity 0.8.26;
  * - Price oracle and rewards management
  *
  * Key Integrations:
- * - Used by PlasmaVault.sol for core vault operations and asset management
- * - Used by PlasmaVaultGovernance.sol for configuration and admin functions
- * - Used by PlasmaVaultBase.sol for ERC20 functionality and access control
+ * - Used by HadronVault.sol for core vault operations and asset management
+ * - Used by HadronVaultGovernance.sol for configuration and admin functions
+ * - Used by HadronVaultBase.sol for ERC20 functionality and access control
  *
  * Security Considerations:
  * - Uses ERC-7201 namespaced storage pattern to prevent storage collisions
@@ -30,7 +30,7 @@ pragma solidity 0.8.26;
  *
  * @custom:security-contact security@ipor.io
  */
-library PlasmaVaultStorageLib {
+library HadronVaultStorageLib {
     /**
      * @dev Storage slot for ERC4626 vault configuration following ERC-7201 namespaced storage pattern
      * @notice This storage location is used to store the core ERC4626 vault data (asset address and decimals)

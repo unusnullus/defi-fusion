@@ -3,7 +3,7 @@ pragma solidity 0.8.26;
 
 import {IFuseCommon} from "../IFuse.sol";
 import {ERC20Upgradeable} from "@openzeppelin/contracts-upgradeable/token/ERC20/ERC20Upgradeable.sol";
-import {PlasmaVaultStorageLib} from "../../libraries/PlasmaVaultStorageLib.sol";
+import {HadronVaultStorageLib as PlasmaVaultStorageLib} from "../../libraries/HadronVaultStorageLib.sol";
 
 /**
  * @title BurnRequestFeeFuse - Fuse for Burning Request Fee Shares

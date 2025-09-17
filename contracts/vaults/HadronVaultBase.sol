@@ -8,7 +8,7 @@ import {Errors} from "../libraries/errors/Errors.sol";
 import {HadronVaultGovernance as PlasmaVaultGovernance} from "./HadronVaultGovernance.sol";
 import {ERC20VotesUpgradeable} from "./ERC20VotesUpgradeable.sol";
 import {HadronVaultLib as PlasmaVaultLib} from "../libraries/HadronVaultLib.sol";
-import {HadronVaultStorageLib as PlasmaVaultStorageLib} from "../libraries/HadronVaultStorageLib.sol";
+import {HadronVaultStorageLib} from "../libraries/HadronVaultStorageLib.sol";
 import {ContextClient} from "../managers/context/ContextClient.sol";
 import {PreHooksHandler} from "../handlers/pre_hooks/PreHooksHandler.sol";
 /**
@@ -43,7 +43,7 @@ contract HadronVaultBase is
     }
 
     function __init(uint256 cap_) internal onlyInitializing {
-        PlasmaVaultStorageLib.ERC20CappedStorage storage $ = PlasmaVaultStorageLib.getERC20CappedStorage();
+        HadronVaultStorageLib.ERC20CappedStorage storage $ = HadronVaultStorageLib.getERC20CappedStorage();
         if (cap_ == 0) {
             revert ERC20InvalidCap(0);
         }
@@ -51,7 +51,7 @@ contract HadronVaultBase is
     }
 
     function cap() public view virtual returns (uint256) {
-        return PlasmaVaultStorageLib.getERC20CappedStorage().cap;
+        return HadronVaultStorageLib.getERC20CappedStorage().cap;
     }
 
     function transferRequestSharesFee(address from_, address to_, uint256 amount_) external override restricted {

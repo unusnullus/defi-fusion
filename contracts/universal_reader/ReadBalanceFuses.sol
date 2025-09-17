@@ -2,7 +2,7 @@
 pragma solidity 0.8.26;
 
 import {IAccessManaged} from "@openzeppelin/contracts/access/manager/IAccessManaged.sol";
-import {HadronVaultStorageLib as PlasmaVaultStorageLib} from "../libraries/HadronVaultStorageLib.sol";
+import {HadronVaultStorageLib} from "../libraries/HadronVaultStorageLib.sol";
 import {FusesLib} from "../libraries/FusesLib.sol";
 import {IporFusionMarkets} from "../libraries/IporFusionMarkets.sol";
 import {IFuseCommon} from "../gluons/IFuseCommon.sol";
@@ -18,7 +18,7 @@ contract ReadBalanceFuses {
      * @return The address of the balance fuse for the given market
      */
     function getBalanceFuse(uint256 marketId) external view returns (address) {
-        PlasmaVaultStorageLib.BalanceFuses storage balanceFuses = PlasmaVaultStorageLib.getBalanceFuses();
+        HadronVaultStorageLib.BalanceFuses storage balanceFuses = HadronVaultStorageLib.getBalanceFuses();
         return balanceFuses.fuseAddresses[marketId];
     }
 
@@ -34,7 +34,7 @@ contract ReadBalanceFuses {
             return new address[](0);
         }
 
-        PlasmaVaultStorageLib.BalanceFuses storage balanceFuses = PlasmaVaultStorageLib.getBalanceFuses();
+        HadronVaultStorageLib.BalanceFuses storage balanceFuses = HadronVaultStorageLib.getBalanceFuses();
         addresses = new address[](marketIdsLength);
 
         for (uint256 i; i < marketIdsLength; i++) {

@@ -2,7 +2,7 @@
 pragma solidity 0.8.26;
 
 import {IFuseCommon} from "../IFuseCommon.sol";
-import {PlasmaVaultStorageLib} from "../../libraries/PlasmaVaultStorageLib.sol";
+import {HadronVaultStorageLib as PlasmaVaultStorageLib} from "../../libraries/HadronVaultStorageLib.sol";
 import {PlasmaVaultConfigLib} from "../../libraries/PlasmaVaultConfigLib.sol";
 import {UniversalReader, ReadResult} from "../../universal_reader/UniversalReader.sol";
 import {WithdrawManager} from "../../managers/withdraw/WithdrawManager.sol";

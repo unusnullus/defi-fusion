@@ -6,7 +6,7 @@ import {HadronVaultConfigLib as PlasmaVaultConfigLib} from "../libraries/HadronV
 import {HadronVaultLib as PlasmaVaultLib, InstantWithdrawalFusesParamsStruct} from "../libraries/HadronVaultLib.sol";
 import {IPriceOracleMiddleware} from "../price_oracle/IPriceOracleMiddleware.sol";
 import {Errors} from "../libraries/errors/Errors.sol";
-import {HadronVaultStorageLib as PlasmaVaultStorageLib} from "../libraries/HadronVaultStorageLib.sol";
+import {HadronVaultStorageLib} from "../libraries/HadronVaultStorageLib.sol";
 import {AssetDistributionProtectionLib, MarketLimit} from "../libraries/AssetDistributionProtectionLib.sol";
 import {AccessManagedUpgradeable} from "../managers/access/AccessManagedUpgradeable.sol";
 import {CallbackHandlerLib} from "../libraries/CallbackHandlerLib.sol";
@@ -364,7 +364,7 @@ abstract contract PlasmaVaultGovernance is IPlasmaVaultGovernance, AccessManaged
         external
         view
         override
-        returns (PlasmaVaultStorageLib.PerformanceFeeData memory feeData)
+        returns (HadronVaultStorageLib.PerformanceFeeData memory feeData)
     {
         feeData = PlasmaVaultLib.getPerformanceFeeData();
     }
@@ -409,7 +409,7 @@ abstract contract PlasmaVaultGovernance is IPlasmaVaultGovernance, AccessManaged
         external
         view
         override
-        returns (PlasmaVaultStorageLib.ManagementFeeData memory feeData)
+        returns (HadronVaultStorageLib.ManagementFeeData memory feeData)
     {
         feeData = PlasmaVaultLib.getManagementFeeData();
     }
@@ -614,7 +614,7 @@ abstract contract PlasmaVaultGovernance is IPlasmaVaultGovernance, AccessManaged
     /// @custom:access External view
     /// @custom:security Non-privileged view function
     function getMarketLimit(uint256 marketId_) external view override returns (uint256) {
-        return PlasmaVaultStorageLib.getMarketsLimits().limitInPercentage[marketId_];
+        return HadronVaultStorageLib.getMarketsLimits().limitInPercentage[marketId_];
     }
 
     /// @notice Gets the dependency balance graph for a specific market
@@ -649,7 +649,7 @@ abstract contract PlasmaVaultGovernance is IPlasmaVaultGovernance, AccessManaged
     /// @custom:access External view
     /// @custom:security Non-privileged view function
     function getDependencyBalanceGraph(uint256 marketId_) external view override returns (uint256[] memory) {
-        return PlasmaVaultStorageLib.getDependencyBalanceGraph().dependencyGraph[marketId_];
+        return HadronVaultStorageLib.getDependencyBalanceGraph().dependencyGraph[marketId_];
     }
 
     /// @notice Gets the total supply cap for the vault

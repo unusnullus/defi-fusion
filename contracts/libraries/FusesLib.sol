@@ -4,7 +4,7 @@ pragma solidity 0.8.26;
 import {Address} from "@openzeppelin/contracts/utils/Address.sol";
 import {IFuseCommon} from "../gluons/IFuseCommon.sol";
 import {FuseStorageLib} from "./FuseStorageLib.sol";
-import {HadronVaultStorageLib as PlasmaVaultStorageLib} from "./HadronVaultStorageLib.sol";
+import {HadronVaultStorageLib} from "./HadronVaultStorageLib.sol";
 /**
  * @title Fuses Library - Core Component for Plasma Vault's Fuse Management System
  * @notice Library managing the lifecycle and configuration of fuses - specialized contracts that enable
@@ -25,7 +25,7 @@ import {HadronVaultStorageLib as PlasmaVaultStorageLib} from "./HadronVaultStora
  * - Used by PlasmaVault.execute() to validate fuse operations
  * - Used by PlasmaVaultGovernance.sol for fuse configuration
  * - Interacts with FuseStorageLib for storage management
- * - Coordinates with PlasmaVaultStorageLib for market data
+     * - Coordinates with HadronVaultStorageLib for market data
  *
  * Security Considerations:
  * - Enforces strict validation of fuse addresses
@@ -78,7 +78,7 @@ library FusesLib {
 
     /**
      * @notice Validates if a fuse is configured as the balance fuse for a specific market
-     * @dev Checks the PlasmaVaultStorageLib mapping to verify balance fuse assignment
+     * @dev Checks the HadronVaultStorageLib mapping to verify balance fuse assignment
      * - Each market can have only one balance fuse at a time
      * - Balance fuses are responsible for tracking market-specific asset balances
      * - Used for market balance validation and updates
@@ -103,12 +103,12 @@ library FusesLib {
      * - Critical for preventing unauthorized balance reporting
      */
     function isBalanceFuseSupported(uint256 marketId_, address fuse_) internal view returns (bool) {
-        return PlasmaVaultStorageLib.getBalanceFuses().fuseAddresses[marketId_] == fuse_;
+        return HadronVaultStorageLib.getBalanceFuses().fuseAddresses[marketId_] == fuse_;
     }
 
     /**
      * @notice Retrieves the designated balance fuse contract address for a specific market
-     * @dev Provides direct access to the balance fuse mapping in PlasmaVaultStorageLib
+     * @dev Provides direct access to the balance fuse mapping in HadronVaultStorageLib
      * - Returns zero address if no balance fuse is configured for the market
      * - Each market can have only one active balance fuse at a time
      *
@@ -133,7 +133,7 @@ library FusesLib {
      * - Other protocol-specific balance fuses
      */
     function getBalanceFuse(uint256 marketId_) internal view returns (address) {
-        return PlasmaVaultStorageLib.getBalanceFuses().fuseAddresses[marketId_];
+        return HadronVaultStorageLib.getBalanceFuses().fuseAddresses[marketId_];
     }
 
     /**
@@ -347,7 +347,7 @@ library FusesLib {
      * Integration Context:
      * - Called by PlasmaVaultGovernance.addBalanceFuse()
      * - Part of market setup and configuration
-     * - Integrates with PlasmaVaultStorageLib.BalanceFuses
+     * - Integrates with HadronVaultStorageLib.BalanceFuses
      * - Supports multi-market balance tracking system
      *
      * Market Tracking:
@@ -379,7 +379,7 @@ library FusesLib {
      * - Market Operations: Balance validation and updates
      */
     function addBalanceFuse(uint256 marketId_, address fuse_) internal {
-        address currentFuse = PlasmaVaultStorageLib.getBalanceFuses().fuseAddresses[marketId_];
+        address currentFuse = HadronVaultStorageLib.getBalanceFuses().fuseAddresses[marketId_];
 
         if (currentFuse == fuse_) {
             revert BalanceFuseAlreadyExists(marketId_, fuse_);
@@ -417,7 +417,7 @@ library FusesLib {
      * Integration Context:
      * - Called by PlasmaVaultGovernance.removeBalanceFuse()
      * - Part of market decommissioning process
-     * - Integrates with PlasmaVaultStorageLib.BalanceFuses
+     * - Integrates with HadronVaultStorageLib.BalanceFuses
      * - Coordinates with balance fuse contracts
      *
      * Market Tracking:
@@ -464,7 +464,7 @@ library FusesLib {
      * - Optimized for minimal gas usage
      */
     function removeBalanceFuse(uint256 marketId_, address fuse_) internal {
-        address currentBalanceFuse = PlasmaVaultStorageLib.getBalanceFuses().fuseAddresses[marketId_];
+        address currentBalanceFuse = HadronVaultStorageLib.getBalanceFuses().fuseAddresses[marketId_];
 
         if (marketId_ != IFuseCommon(fuse_).MARKET_ID()) {
             revert BalanceFuseMarketIdMismatch(marketId_, fuse_);
@@ -495,7 +495,7 @@ library FusesLib {
      * - Order of markets matches their registration sequence
      *
      * Storage Access:
-     * - Reads from PlasmaVaultStorageLib.BalanceFuses.marketIds
+     * - Reads from HadronVaultStorageLib.BalanceFuses.marketIds
      * - No storage modifications
      * - O(1) operation for array access
      * - Returns reference to complete array
@@ -533,15 +533,15 @@ library FusesLib {
      * - Suitable for view function calls
      */
     function getActiveMarketsInBalanceFuses() internal view returns (uint256[] memory) {
-        return PlasmaVaultStorageLib.getBalanceFuses().marketIds;
+        return HadronVaultStorageLib.getBalanceFuses().marketIds;
     }
 
     function _calculateAllowedDustInBalanceFuse() private view returns (uint256) {
-        return 10 ** (PlasmaVaultStorageLib.getERC4626Storage().underlyingDecimals / 2);
+        return 10 ** (HadronVaultStorageLib.getERC4626Storage().underlyingDecimals / 2);
     }
 
     function _updateBalanceFuseStructWhenAdding(uint256 marketId_, address fuse_) private {
-        PlasmaVaultStorageLib.BalanceFuses storage balanceFuses = PlasmaVaultStorageLib.getBalanceFuses();
+        HadronVaultStorageLib.BalanceFuses storage balanceFuses = HadronVaultStorageLib.getBalanceFuses();
 
         uint256 newMarketIdIndexValue = balanceFuses.marketIds.length + 1;
 
@@ -550,7 +550,7 @@ library FusesLib {
         balanceFuses.indexes[marketId_] = newMarketIdIndexValue;
     }
     function _updateBalanceFuseStructWhenRemoving(uint256 marketId_) private {
-        PlasmaVaultStorageLib.BalanceFuses storage balanceFuses = PlasmaVaultStorageLib.getBalanceFuses();
+        HadronVaultStorageLib.BalanceFuses storage balanceFuses = HadronVaultStorageLib.getBalanceFuses();
 
         delete balanceFuses.fuseAddresses[marketId_];
 

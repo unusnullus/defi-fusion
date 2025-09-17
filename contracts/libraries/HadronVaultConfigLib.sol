@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: BUSL-1.1
 pragma solidity 0.8.26;
 
-import {PlasmaVaultStorageLib} from "./PlasmaVaultStorageLib.sol";
+import {HadronVaultStorageLib as PlasmaVaultStorageLib} from "./HadronVaultStorageLib.sol";
 
 /// @title Plasma Vault Configuration Library responsible for managing the configuration of the Plasma Vault
 library PlasmaVaultConfigLib {

@@ -4,7 +4,7 @@ pragma solidity 0.8.26;
 import {Address} from "@openzeppelin/contracts/utils/Address.sol";
 import {SafeERC20} from "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
 import {FuseAction} from "../interfaces/IPlasmaVault.sol";
-import {PlasmaVaultStorageLib} from "./PlasmaVaultStorageLib.sol";
+import {HadronVaultStorageLib as PlasmaVaultStorageLib} from "./HadronVaultStorageLib.sol";
 import {PlasmaVault} from "../vaults/PlasmaVault.sol";
 import {ERC20} from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 

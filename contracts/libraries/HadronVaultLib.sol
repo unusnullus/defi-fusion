@@ -3,7 +3,7 @@ pragma solidity 0.8.26;
 
 import {SafeCast} from "@openzeppelin/contracts/utils/math/SafeCast.sol";
 import {Errors} from "./errors/Errors.sol";
-import {PlasmaVaultStorageLib} from "./PlasmaVaultStorageLib.sol";
+import {HadronVaultStorageLib as PlasmaVaultStorageLib} from "./HadronVaultStorageLib.sol";
 import {FusesLib} from "./FusesLib.sol";
 
 /// @title InstantWithdrawalFusesParamsStruct

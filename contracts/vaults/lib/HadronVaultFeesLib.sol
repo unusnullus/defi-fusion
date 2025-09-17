@@ -3,7 +3,7 @@ pragma solidity ^0.8.20;
 
 import {SafeCast} from "@openzeppelin/contracts/utils/math/SafeCast.sol";
 import {Math} from "@openzeppelin/contracts/utils/math/Math.sol";
-import {HadronVaultStorageLib as PlasmaVaultStorageLib} from "../../libraries/HadronVaultStorageLib.sol";
+import {HadronVaultStorageLib} from "../../libraries/HadronVaultStorageLib.sol";
 import {HadronVaultLib as PlasmaVaultLib} from "../../libraries/HadronVaultLib.sol";
 import {FeeManager} from "../../managers/fee/FeeManager.sol";
 import {FeeAccount} from "../../managers/fee/FeeAccount.sol";
@@ -19,7 +19,7 @@ library PlasmaVaultFeesLib {
         uint256 decimalsOffset_,
         uint256 actualExchangeRate_
     ) internal returns (address recipient, uint256 feeShares) {
-        PlasmaVaultStorageLib.PerformanceFeeData memory feeData = PlasmaVaultLib.getPerformanceFeeData();
+        HadronVaultStorageLib.PerformanceFeeData memory feeData = PlasmaVaultLib.getPerformanceFeeData();
 
         (recipient, feeShares) = FeeManager(FeeAccount(feeData.feeAccount).FEE_MANAGER())
             .calculateAndUpdatePerformanceFee(
@@ -33,7 +33,7 @@ library PlasmaVaultFeesLib {
     function prepareForRealizeManagementFee(
         uint256 totalAssetsBefore_
     ) internal returns (address recipient, uint256 unrealizedFeeInUnderlying) {
-        PlasmaVaultStorageLib.ManagementFeeData memory feeData = PlasmaVaultLib.getManagementFeeData();
+        HadronVaultStorageLib.ManagementFeeData memory feeData = PlasmaVaultLib.getManagementFeeData();
 
         recipient = feeData.feeAccount;
 
@@ -43,7 +43,7 @@ library PlasmaVaultFeesLib {
     }
 
     function getUnrealizedManagementFee(uint256 totalAssets_) internal view returns (uint256) {
-        PlasmaVaultStorageLib.ManagementFeeData memory feeData = PlasmaVaultLib.getManagementFeeData();
+        HadronVaultStorageLib.ManagementFeeData memory feeData = PlasmaVaultLib.getManagementFeeData();
 
         uint256 blockTimestamp = block.timestamp;
 

@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: BUSL-1.1
 pragma solidity 0.8.26;
 
-import {PlasmaVaultStorageLib} from "../libraries/PlasmaVaultStorageLib.sol";
+import {HadronVaultStorageLib} from "../libraries/HadronVaultStorageLib.sol";
 import {UniversalReader, ReadResult} from "../universal_reader/UniversalReader.sol";
 
 /**
@@ -21,7 +21,7 @@ contract BalanceFusesReader {
         view
         returns (uint256[] memory marketIds, address[] memory fuseAddresses)
     {
-        PlasmaVaultStorageLib.BalanceFuses storage balanceFuses = PlasmaVaultStorageLib.getBalanceFuses();
+        HadronVaultStorageLib.BalanceFuses storage balanceFuses = HadronVaultStorageLib.getBalanceFuses();
 
         marketIds = balanceFuses.marketIds;
         uint256 length = marketIds.length;

@@ -2,7 +2,7 @@
 pragma solidity 0.8.26;
 
 import {IFuseCommon} from "../IFuseCommon.sol";
-import {PlasmaVaultStorageLib} from "../../libraries/PlasmaVaultStorageLib.sol";
+import {HadronVaultStorageLib as PlasmaVaultStorageLib} from "../../libraries/HadronVaultStorageLib.sol";
 
 /// @notice Data structure for entering the UpdateWithdrawManagerMaintenanceFuse
 struct UpdateWithdrawManagerMaintenanceFuseEnterData {
