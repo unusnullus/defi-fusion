@@ -1,8 +1,9 @@
 // SPDX-License-Identifier: BUSL-1.1
 pragma solidity 0.8.26;
 
-import {PlasmaVaultInitData} from "../vaults/PlasmaVault.sol";
-import {PlasmaVault} from "../vaults/PlasmaVault.sol";
+// Deprecated: use HadronVaultFactory instead. Kept for backward compatibility.
+import {HadronVaultInitData as PlasmaVaultInitData} from "../vaults/HadronVault.sol";
+import {HadronVault as PlasmaVault} from "../vaults/HadronVault.sol";
 
 /// @title PlasmaVaultFactory
 /// @notice Factory contract for creating and deploying new PlasmaVault instances
