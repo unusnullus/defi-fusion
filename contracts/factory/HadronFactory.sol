@@ -2,16 +2,14 @@
 pragma solidity 0.8.26;
 
 import {UUPSUpgradeable} from "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol";
-import {FusionFactoryStorageLib} from "./lib/FusionFactoryStorageLib.sol";
+import {FusionFactoryStorageLib} from "./lib/HadronFactoryStorageLib.sol";
+import {FusionFactoryLib} from "./lib/HadronFactoryLib.sol";
+import {FusionFactoryAccessControl} from "./HadronFactoryAccessControl.sol";
 
-import {FusionFactoryLib} from "./lib/FusionFactoryLib.sol";
-
-import {FusionFactoryAccessControl} from "./FusionFactoryAccessControl.sol";
-
-/// @title FusionFactory
-/// @notice Factory contract for creating and managing Fusion Managers
+/// @title HadronFactory
+/// @notice Factory contract for creating and managing Hadron Managers
 /// @dev This contract is responsible for deploying and initializing various manager contracts
-contract FusionFactory is UUPSUpgradeable, FusionFactoryAccessControl {
+contract HadronFactory is UUPSUpgradeable, FusionFactoryAccessControl {
     event FactoryAddressesUpdated(
         uint256 version,
         address accessManagerFactory,
