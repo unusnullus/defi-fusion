@@ -50,7 +50,7 @@ contract HadronVault is
     error UnsupportedMethod();
     error PermitFailed();
 
-    address public immutable PLASMA_VAULT_BASE;
+    address public immutable HADRON_VAULT_BASE;
     uint256 private immutable _SHARE_SCALE_MULTIPLIER;
 
     constructor(HadronVaultInitData memory initData_) ERC20Upgradeable() ERC4626Upgradeable() initializer {
@@ -59,9 +59,9 @@ contract HadronVault is
 
         _SHARE_SCALE_MULTIPLIER = 10 ** _decimalsOffset();
 
-        PLASMA_VAULT_BASE = initData_.plasmaVaultBase;
+        HADRON_VAULT_BASE = initData_.plasmaVaultBase;
 
-        PLASMA_VAULT_BASE.functionDelegateCall(
+        HADRON_VAULT_BASE.functionDelegateCall(
             abi.encodeWithSelector(
                 IPlasmaVaultBase.init.selector,
                 initData_.assetName,
@@ -76,7 +76,7 @@ contract HadronVault is
             CallbackHandlerLib.handleCallback();
             return "";
         } else {
-            return PLASMA_VAULT_BASE.functionDelegateCall(msg.data);
+            return HADRON_VAULT_BASE.functionDelegateCall(msg.data);
         }
     }
 
@@ -337,7 +337,7 @@ contract HadronVault is
     }
 
     function _update(address from_, address to_, uint256 value_) internal virtual override {
-        PLASMA_VAULT_BASE.functionDelegateCall(
+        HADRON_VAULT_BASE.functionDelegateCall(
             abi.encodeWithSelector(IPlasmaVaultBase.updateInternal.selector, from_, to_, value_)
         );
     }

@@ -52,11 +52,11 @@ library FusionFactoryStorageLib {
     bytes32 private constant FUSION_FACTORY_INDEX = 0x7c54bb33443ce94044aec2970018125c202903e78abecda9a8871f0a2e085400;
 
     /// @dev keccak256(abi.encode(uint256(keccak256("io.ipor.fusion.factory.PlasmaVaultAdminArray")) - 1)) & ~bytes32(uint256(0xff))
-    bytes32 private constant PLASMA_VAULT_ADMIN_ARRAY =
+    bytes32 private constant HADRON_VAULT_ADMIN_ARRAY =
         0x09e657bd0ea9e1ace5b99e5e8bb556174727dbd9076ea35b667e7736f1584000;
 
     /// @dev keccak256(abi.encode(uint256(keccak256("io.ipor.fusion.factory.PlasmaVaultFactoryAddress")) - 1)) & ~bytes32(uint256(0xff))
-    bytes32 private constant PLASMA_VAULT_FACTORY_ADDRESS =
+    bytes32 private constant HADRON_VAULT_FACTORY_ADDRESS =
         0xe03d6bb506e833b55bb7e35e66d871fd1486b3efc6bb02b49fae15b9d0247c00;
 
     /// @dev keccak256(abi.encode(uint256(keccak256("io.ipor.fusion.factory.AccessManagerFactoryAddress")) - 1)) & ~bytes32(uint256(0xff))
@@ -84,7 +84,7 @@ library FusionFactoryStorageLib {
         0xd7a02eb1d0bb68108f76123da75aaeb1a46f41df9f533c7662e3a619ec932800;
 
     /// @dev keccak256(abi.encode(uint256(keccak256("io.ipor.fusion.factory.PlasmaVaultBaseAddress")) - 1)) & ~bytes32(uint256(0xff))
-    bytes32 private constant PLASMA_VAULT_BASE_ADDRESS =
+    bytes32 private constant HADRON_VAULT_BASE_ADDRESS =
         0x184318af1b1e15812549d3991019d6e84064e321b012fca8ea3de5c3da16db00;
 
     /// @dev keccak256(abi.encode(uint256(keccak256("io.ipor.fusion.factory.PriceOracleMiddlewareAddress")) - 1)) & ~bytes32(uint256(0xff))
@@ -269,13 +269,13 @@ library FusionFactoryStorageLib {
 
     function _getPlasmaVaultAdminArraySlot() private pure returns (AddressArrayType storage $) {
         assembly {
-            $.slot := PLASMA_VAULT_ADMIN_ARRAY
+            $.slot := HADRON_VAULT_ADMIN_ARRAY
         }
     }
 
     function _getPlasmaVaultFactoryAddressSlot() private pure returns (AddressType storage $) {
         assembly {
-            $.slot := PLASMA_VAULT_FACTORY_ADDRESS
+            $.slot := HADRON_VAULT_FACTORY_ADDRESS
         }
     }
 
@@ -317,7 +317,7 @@ library FusionFactoryStorageLib {
 
     function _getPlasmaVaultBaseAddressSlot() private pure returns (AddressType storage $) {
         assembly {
-            $.slot := PLASMA_VAULT_BASE_ADDRESS
+            $.slot := HADRON_VAULT_BASE_ADDRESS
         }
     }
 
