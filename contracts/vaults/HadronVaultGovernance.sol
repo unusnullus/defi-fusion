@@ -6,7 +6,7 @@ import {HadronVaultConfigLib as PlasmaVaultConfigLib} from "../libraries/HadronV
 import {HadronVaultLib as PlasmaVaultLib, InstantWithdrawalFusesParamsStruct} from "../libraries/HadronVaultLib.sol";
 import {IPriceOracleMiddleware} from "../price_oracle/IPriceOracleMiddleware.sol";
 import {Errors} from "../libraries/errors/Errors.sol";
-import {PlasmaVaultStorageLib} from "../libraries/PlasmaVaultStorageLib.sol";
+import {HadronVaultStorageLib as PlasmaVaultStorageLib} from "../libraries/HadronVaultStorageLib.sol";
 import {AssetDistributionProtectionLib, MarketLimit} from "../libraries/AssetDistributionProtectionLib.sol";
 import {AccessManagedUpgradeable} from "../managers/access/AccessManagedUpgradeable.sol";
 import {CallbackHandlerLib} from "../libraries/CallbackHandlerLib.sol";
