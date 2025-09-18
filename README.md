@@ -120,6 +120,17 @@ sequenceDiagram
   Vault-->>User: shares burned, assets transferred
 ```
 
+## TON Port (USDT Jetton)
+
+Hadron is also ported to TON using Tact. The current scaffold supports USDT Jetton deposits and withdrawals:
+
+- `usdt_root` and `usdt_vault_wallet` configure the Jetton root and the vault’s Jetton wallet.
+- Deposits are credited on Jetton transfer notifications via `creditDeposit(from, amount)`.
+- Withdrawals burn shares and instruct the vault wallet to transfer Jettons to the receiver.
+- Replace placeholder Jetton message bodies with the official Jetton wallet ABI before production use.
+
+See the full TON documentation, diagrams, and API in [`ton/README.md`](ton/README.md).
+
 ## Installation
 
 To install the dependencies for this project:
