@@ -1,0 +1,9 @@
+{
+  "projects": [
+    {
+      "name": "hadron-ton",
+      "path": "./contracts",
+      "output": "./build"
+    }
+  ]
+}

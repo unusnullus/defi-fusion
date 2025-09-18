@@ -8,6 +8,8 @@ keeping the core minimal and protocol-agnostic.
 
 For architecture details and usage guides, refer to the docs in this repository.
 
+- TON port: see `ton/README.md` for the Hadron-on-TON scaffold and architecture.
+
 ### Architecture Schema
 
 The Hadron Vault is a minimal ERC4626 vault with modular protocol adapters called "gluons" executed via delegatecall. Core pieces are upgrade-friendly and use ERC-7201 namespaced storage.

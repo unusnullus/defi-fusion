@@ -1,0 +1,12 @@
+{
+  "name": "hadron-ton",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "tact build",
+    "test": "echo 'No tests yet for TON module'"
+  },
+  "devDependencies": {
+    "tact-cli": "^1.0.0"
+  }
+}
